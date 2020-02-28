@@ -98,4 +98,10 @@ public class CartServiceImpl implements Cartservice {
         jedisClient.hdel(REDIS_CART__PRE +":"+ userId,itemId+"");
         return E3Result.ok();
     }
+
+
+    public E3Result clearCartItem(long userId) {
+        jedisClient.del(REDIS_CART__PRE +":"+ userId);
+        return null;
+    }
 }
