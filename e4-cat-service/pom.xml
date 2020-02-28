@@ -3,46 +3,32 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>e4parent</artifactId>
+        <artifactId>e4-cart</artifactId>
         <groupId>cn.e4mall</groupId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../e4parent/pom.xml</relativePath>
     </parent>
+    <packaging>war</packaging>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.e4mall</groupId>
-<<<<<<< HEAD
-    <artifactId>e4-cat-web</artifactId>
-    <packaging>war</packaging>
-=======
-    <artifactId>e4-cart</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>e4-cat-interface</module>
-        <module>e4-cat-service</module>
-    </modules>
->>>>>>> cat-service-pom  first-cmomit
+    <artifactId>e4-cat-service</artifactId>
 
     <dependencies>
+        <!-- 需要使用 manage 的dao-->
         <dependency>
             <groupId>cn.e4mall</groupId>
-<<<<<<< HEAD
+            <artifactId>e4-manager-dao</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.e4mall</groupId>
             <artifactId>e4-cat-interface</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
-        <dependency>
-            <groupId>cn.e4mall</groupId>
-            <artifactId>e4-manager-interface</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
 
-        <dependency>
-            <groupId>cn.e4mall</groupId>
-            <artifactId>cn-sso-interface</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <!-- spring-we-->
+        <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -71,22 +57,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
         </dependency>
-        <!-- JSP相关 -->
-        <dependency>
-            <groupId>jstl</groupId>
-            <artifactId>jstl</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jsp-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <!-- dubbo相关 -->
         <!-- dubbo相关 -->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -110,29 +80,15 @@
             <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
         </dependency>
-
+        <!--redis 有关-->
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <!-- 文件上传组件 -->
-        <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-        </dependency>
-
     </dependencies>
 
-
-    <!-- 配置tomcat插件 -->
     <build>
         <plugins>
             <plugin>
@@ -140,16 +96,9 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
                     <path>/</path>
-                    <port>8090</port>
+                    <port>8024</port>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-=======
-            <artifactId>e4-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
-
->>>>>>> cat-service-pom  first-cmomit
 </project>
